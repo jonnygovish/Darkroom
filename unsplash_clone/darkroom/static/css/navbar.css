@@ -1,0 +1,15 @@
+#nav {
+  background-color:white;
+  color: black;
+  border: white;
+}
+#nav a {
+  color: black;
+}
+.glyph{
+  color: black;
+  font-size: 40px;
+}
+#search{
+  margin: 21px; 
+}
