@@ -9,12 +9,13 @@
 {% block content %}
 {{block.super}}
 
-<div class="container">
     <div class="row tags">
         <ul class="list-unstyled">
             {% for tag in tags %}
             <div class="col-md-2">
-                <li class="taglist">{{tag.name}} </li>
+                <a href="{% url 'tag' tag.id %} ">
+                    <li class="taglist">{{tag.name}} </li>
+                </a>
             </div>
             {% endfor %}
         </ul>
@@ -25,24 +26,23 @@
         Gifted by the world's most generous community of photographers</p>
     
     
-        <div class="container">
-            <br>
-            <!-- Looping through news -->
-            {% for photo in photos %}
-            
-              <div class="row">
-                <!--Display images  -->
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                    <img src="{{photo.photo_image.url}}" class="img-responsive" alt="name">
-                </div>
-                <br>
-            
-              </div>
-            {% empty %}
-            <div class="row">
-              <h2 class="text-center">There are No  photos </h2>
-            </div>
-            {% endfor %}
-          </div>
+    
+        <br>
+    <div class="row">
+        {% for photo in photos %}
+        <!--Display images  -->
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-4">
+            <a href="{% url 'photo' photo.id %} ">
+                <img src="{{photo.photo_image.url}}" class="img-responsive" alt="name">
+            </a>
+        </div>
+        
+    
+    </div>
+    {% empty %}
+    <div class="row">
+        <h2 class="text-center">There are No  photos </h2>
+    </div>
+    {% endfor %}
+
     {% endblock %}
-</div>
