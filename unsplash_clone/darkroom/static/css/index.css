@@ -1,3 +1,14 @@
 .tagslist li{
   float: left;
 }
+img.img-responsive{
+  height: 45vh;
+  margin-top: 1.25em;
+}
+.well{
+  background-image: url(https://wallpapercave.com/wp/0HnlqSO.jpg)
+}
+
+.tags a{
+  color: white;
+}
