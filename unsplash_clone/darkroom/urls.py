@@ -4,7 +4,10 @@ from django.conf.urls import url
 from .import views
 
 urlpatterns = [
-  url('^$', views.index, name = 'Home')
+  url('^$', views.index, name = 'Home'),
+  url(r'^/photo/(\d+)',views.photo, name = 'photo'),
+  url(r'^/tag/(\d+)',views.tags, name = 'tag')
+
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

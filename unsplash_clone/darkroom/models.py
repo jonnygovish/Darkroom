@@ -44,3 +44,6 @@ class Photo(models.Model):
     photos = Photo.objects.all()
     return photos
 
+  def __str__(self):
+    return self.name
+
