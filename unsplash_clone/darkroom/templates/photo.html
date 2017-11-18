@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{{block.super}}
+<div class="container">
+  
+    <div >
+      <img src="{{photo.photo_image.url}} " alt="{{photo.name}} ">
+    </div>
+  </div>
+{% endblock %}
