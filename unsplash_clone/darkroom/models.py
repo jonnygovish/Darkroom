@@ -18,6 +18,11 @@ class User(models.Model):
 class Tag(models.Model):
   name = models.CharField(max_length = 30)
 
+  @classmethod
+  def get_tags(cls):
+    tags = cls.objects.all()
+    return tags
+
   def __str__(self):
     return self.name
 
