@@ -8,13 +8,20 @@
 
 {% block content %}
 {{block.super}}
-  <div class="container-fluid">
-    <div class="row">
-        <h3>{{tag.name}}'s Images</h3>
-    </div>
+<div class="container-fluid">
+  <div class="row">
+    {% if tags%}
+      <h2>Found {{ photos|length }} of searched term {{message}}</h2>
+    {% else %}
+      <h2> Found 0 tags for the search term {{message}}</h2>
+    {% endif %}
+
   </div>
+</div>
 
   <div class="row">
+
+  {% if photos %}
     {% for photo in photos %}
     <div class="col-md-4" >
       <a href="{% url 'photo' photo.id %} ">
@@ -22,5 +29,6 @@
        </a>
     </div>
     {% endfor %}
+  {% endif %}
   </div>
 {% endblock %}

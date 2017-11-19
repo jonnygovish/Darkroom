@@ -12,19 +12,21 @@
 
     <div class="row tags">
         <ul class="list-unstyled">
-            {% for tag in tags %}
+            {% for tag in tags|slice:":6" %}
             <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
                 <a href="{% url 'tag' tag.id %} ">
-                    <li class="well taglist text-center">{{tag.name}} </li>
+                    <li class="taglist text-center">{{tag.name}} </li>
                 </a>
             </div>
             {% endfor %}
         </ul>
     </div>
-    
-    <h1>Darkroom</h1>
-    <p>Beautiful, free photos.<br> 
-        Gifted by the world's most generous community of photographers</p>
+    <br>
+    <div>
+        <h1>Darkroom</h1>
+        <p>Beautiful, free photos.<br> 
+            Gifted by the world's most generous community of photographers</p>
+    </div>
     
     
     
