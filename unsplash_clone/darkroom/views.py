@@ -23,3 +23,17 @@ def tags(request,tag_id):
   except DoesNotExist:
     raise Http404()
   return render(request,'tag.html', {"tag": tag, "photos":photos})
+
+def search_results(request):
+
+  if 'tag' in request.GET and request.GET['tag']:
+    search_term = request.GET.get('tag')
+    searched_tags = Tag.search_by_tag(search_term)
+    photos = Photo.objects.filter(tag = searched_tags).all()
+    message = f"{search_term}"
+
+
+    return render(request, 'search.html', {"message":message,"tags":searched_tags,"photos":photos})
+  else:
+    message = "You havent searched for any tag"
+    return render(request,'search.html', {"message": message})
