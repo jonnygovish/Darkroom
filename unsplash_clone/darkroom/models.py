@@ -19,6 +19,11 @@ class Tag(models.Model):
   name = models.CharField(max_length = 30)
 
   @classmethod
+  def search_by_tag(cls,search_term):
+    tags = cls.objects.filter(name__icontains= search_term)
+    return tags
+
+  @classmethod
   def get_tags(cls):
     tags = cls.objects.all()
     return tags
