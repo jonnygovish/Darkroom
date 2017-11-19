@@ -11,5 +11,34 @@
   font-size: 40px;
 }
 #search{
-  margin: 21px; 
+  position: relative;
+  margin-top: 17px;
+  margin-left: -28px;
+  display: flex;
+  width: 100%;
+}
+.search{
+  width: 100%;
+  height: 40px;
+  padding: 0 30px 2px 42px;
+  font-size: 14px;
+  color: #111;
+  background-color: #f1f1f1;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  outline: none;
+  transition: all .2s ease-in-out;
+}
+.search-button{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 71px;
+  height: 40px;
+  padding: 0;
+  color: #999;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+
 }
