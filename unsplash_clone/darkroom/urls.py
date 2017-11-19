@@ -5,8 +5,9 @@ from .import views
 
 urlpatterns = [
   url('^$', views.index, name = 'Home'),
-  url(r'^/photo/(\d+)',views.photo, name = 'photo'),
-  url(r'^/tag/(\d+)',views.tags, name = 'tag')
+  url(r'^photo/(\d+)',views.photo, name = 'photo'),
+  url(r'^tag/(\d+)',views.tags, name = 'tag'),
+  url(r'^search/',views.search_results, name = 'search_results')
 
 ]
 if settings.DEBUG:
