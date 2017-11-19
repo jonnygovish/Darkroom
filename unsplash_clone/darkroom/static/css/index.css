@@ -5,10 +5,19 @@ img.img-responsive{
   height: 45vh;
   margin-top: 1.25em;
 }
-.well{
-  background-image: url(https://wallpapercave.com/wp/0HnlqSO.jpg)
+.taglist{
+  background-image: url(https://wallpapercave.com/wp/0HnlqSO.jpg);
+  width: 100%;
+  height: 3em;
+  background-size: 100%;
+  border-style:  solid #000;;
+  border-radius: 10px;
+  padding-top: 10px;
 }
 
 .tags a{
-  color: white;
+  color: whitesmoke;
+}
+.tags a :hover{
+  color: yellowgreen;
 }
