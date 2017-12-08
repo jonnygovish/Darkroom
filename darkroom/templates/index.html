@@ -12,10 +12,10 @@
 
     <div class="row tags">
         <ul class="list-unstyled">
-            {% for tag in tags|slice:":6" %}
-            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                <a href="{% url 'tag' tag.id %} ">
-                    <li class="taglist text-center">{{tag.name}} </li>
+            {% for tag in tags|slice:":11"%}
+            <div class="col-md-1 col-sm-2 col-xs-2 col-lg-1" >
+                <a href="{%url 'tag' tag.id%}"> <img src="{{tag.tag_photo.url}}" alt=""  height="40px" width="100" class="tag_image">
+                    <h4><span class="tag_names">{{tag.name}}</span></h4>
                 </a>
             </div>
             {% endfor %}
@@ -31,16 +31,22 @@
     
     
 
-    <div class="row">
-        {% for photo in photos %}
-        <!--Display images  -->
-            <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-                <a href="{% url 'photo' photo.id %} ">
-                    <img src="{{photo.photo_image.url}}" class="img-responsive" alt="name">
-                </a>
-            </div>
     
-        {% endfor %}
-    </div>
+        <div class="photo-div">
+            {% for photo in photos %}
+                <div class="image-container">
+                    <a href="{% url 'photo' photo.id %}">
+                        <div class="after"></div>
+                        <img src="{{photo.photo_image.url}}" class="img-responsive photo-image" alt="name">
+                    </a>
+                </div>         
+            {% empty %}
+            <div class="row">
+                <h2 class="text-center">There are no images</h2>
+            </div>
+            {% endfor %}
+        </div>
+    
+
 
     {% endblock %}

@@ -8,10 +8,40 @@
 
 {% block content %}
 {{block.super}}
-<div class="container">
-  
-    <div >
-      <img src="{{photo.photo_image.url}} " class="img-responsive" alt="{{photo.name}} ">
+<div class="container-fluid photo-overlay">
+  <div class="panel panel-default photo-panel">
+    <div class="panel-heading">
+      <button class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal">
+        <h5>Download Free</h5>
+      </button>
     </div>
+    <div class="panel-body">
+      <div class="col-md-12 photo-div">
+        <img src="{{photo.photo_image.url}} " class="img-responsive photo-detail" alt="{{photo.name}} ">
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <a href="{{photo.photo_image.url}} ">Photo</a>
+          <h4>http://127.0.0.1:8000{{photo.photo_image.url}}</h4>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div> -->
+      </div>
+  
+    </div>
+  </div>
+    
+    
   </div>
 {% endblock %}
