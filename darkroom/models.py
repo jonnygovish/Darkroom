@@ -17,6 +17,7 @@ class User(models.Model):
     ordering = ['first_name']
 class Tag(models.Model):
   name = models.CharField(max_length = 30)
+  tag_photo = models.ImageField(upload_to = 'photos/')
 
   @classmethod
   def search_by_tag(cls,search_term):
