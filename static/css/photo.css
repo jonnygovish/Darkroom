@@ -1,4 +1,28 @@
-img.img-responsive{
-  /* height: 100%; */
-  margin-top: 1.25em;
+.photo-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+}
+.photo-panel{
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.btn-xs{
+  float: right;
+  width: 15%;
+  background-color: #3cb46e;
+  margin-top: -0.5%;
+}
+.panel-default>.panel-heading {
+  background: white;
+  border-bottom: none;
+  padding-top: 1%;
+}
+
+.photo-div {
+  width: 100%;
+}
+
+.photo-detail{
+  width: 100%
 }
